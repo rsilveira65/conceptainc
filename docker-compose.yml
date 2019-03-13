@@ -1,0 +1,27 @@
+version: "2"
+
+services:
+  database:
+    image: mysql:5.7
+    container_name: conceptainc-database
+    volumes:
+      - ./docker/database/data:/var/lib/mysql
+      - ./docker/database/dumps:/dumps
+    env_file:
+      - ./.env
+
+  application:
+    build:
+      context: ./application
+      args:
+        UID: ${UID}
+        environment: "dev"
+    image: conceptainc-application-image
+    container_name: conceptainc-application
+    env_file:
+      - ./.env
+    volumes:
+      - ./application:/var/www/html
+      - ./docker/volumes/uploads:/var/www/html/wp-content/uploads
+    ports:
+      - "80:80"

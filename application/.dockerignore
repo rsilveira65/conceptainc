@@ -1,0 +1,6 @@
+## Docker ##
+.dockerignore
+Dockerfile
+
+## Wordpress ##
+wp-content/uploads/
