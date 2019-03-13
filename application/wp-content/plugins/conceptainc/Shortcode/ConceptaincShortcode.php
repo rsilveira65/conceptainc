@@ -5,6 +5,8 @@ if (!function_exists('Conceptainc_Shortcode')) {
     {
         $tickets = ConceptaincAPICaller::requestTickets();
 
+        //TODO embed React App.
+
         return ConceptaincShortcodeRender::view(
             'shortcode',
             compact('tickets')

@@ -35,7 +35,7 @@ Don't forget to add the application/json as the Content-Type in the request head
 Another required parameter in the request header is an Authorization token. The Service API is protected by login, so before the first call you
 will need to ensure that you are authorized to that.
 The token is valid for 24 hours after created
-
+```
 Request Header Example:
 Content-Type: application/json
 Authorization: Bearer
@@ -46,6 +46,8 @@ Hosk7Qmfn7NSCN47Gbb4FacTodIlmpmjYjjI98rpQeaSM8b5_foJrjAFmiob-P-V1cJij2AG1T
 7FsTzz4FbXGuoSbrdq2LqOft9W25A7IjVZBKqz-UBL_Fltnlc1f_fiMvOfszNLWbO87PYaqW7o
 va8fdj2p5KyHDo2jB6F2trLPLBalKKN-5OuMHUp_v-lPXk6b64F3vMwINDgpzSQa-80_wln_1b
 lE2MChwb3nbSfA2_9dR1XKDFtehWLWP03lxwGIiM2vS_MuU
+
+```
 
 To get this Authorization token, make a POST request to: http://travellogix.api.test.conceptsol.com/Token passing this RAW data (no headers
 needed):
@@ -98,5 +100,8 @@ $ mysql -uconceptainc -pconceptainc conceptainc < dumps/conceptainc_dump.sql
 
 ### 1.5 Open your browser on
 http://localhost
+
+
+[Download the POSTMAN Collection](https://www.getpostman.com/collections/b3dfa014d86371640238)
 
 
