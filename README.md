@@ -73,3 +73,30 @@ requests. (edited)
 
 ```
 
+
+## 1. Project Setup
+
+### 1.1 Make sure you have Docker installed
+https://docs.docker.com/engine/installation/linux/
+
+### 1.2 Create .env file
+```bash
+$ cp .env_dist .env
+```
+
+### 1.3 Run the following command
+```bash
+$ docker-compose up -d
+```
+
+### 1.4 Setup database
+```bash
+$ docker exec -it conceptainc-database bash
+$ mysql -uconceptainc -pconceptainc conceptainc < dumps/conceptainc_dump.sql
+
+```
+
+### 1.5 Open your browser on
+http://localhost
+
+
