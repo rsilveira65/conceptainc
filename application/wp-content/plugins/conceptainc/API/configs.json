@@ -1,6 +1,8 @@
 {
   "user": "test1%40test2.com",
   "password": "Aa234567%21",
-  "tokenEndpoint": "http://travellogix.api.test.conceptsol.com/Token",
-  "ticketSearchEndpoint": "http://travellogix.api.test.conceptsol.com/api/Ticket/Search"
+  "endpoints": {
+    "tokenEndpoint": "http://travellogix.api.test.conceptsol.com/Token",
+    "ticketSearchEndpoint": "http://travellogix.api.test.conceptsol.com/api/Ticket/Search"
+  }
 }

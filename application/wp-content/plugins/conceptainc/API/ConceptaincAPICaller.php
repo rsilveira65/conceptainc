@@ -39,7 +39,7 @@ class ConceptaincAPICaller
         ];
 
         $response = self::request(
-            $configs['ticketSearchEndpoint'],
+            $configs['endpoints']['ticketSearchEndpoint'],
             json_encode($content, true),
             $headers
         );
@@ -60,7 +60,7 @@ class ConceptaincAPICaller
             $configs['password']
         );
 
-        $endpoint = $configs['tokenEndpoint'];
+        $endpoint = $configs['endpoints']['tokenEndpoint'];
 
         $response = self::request(
             $endpoint,
