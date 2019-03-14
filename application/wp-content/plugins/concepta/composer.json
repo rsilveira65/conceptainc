@@ -1,0 +1,11 @@
+{
+  "name": "rsilveira65/conceptainc",
+  "license": "proprietary",
+  "type": "plugin",
+  "autoload": {
+    "psr-4": {
+      "Concepta\\": "src/",
+      "Concepta\\Core\\": "lib/"
+    }
+  }
+}
