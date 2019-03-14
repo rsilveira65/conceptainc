@@ -8,7 +8,6 @@
 
 namespace Concepta\APIFetcherModules\Service;
 
-
 /**
  * Class TicketAPIFetcherService
  *
@@ -24,7 +23,6 @@ class TicketAPIFetcherService
     static public function requestTickets()
     {
         try {
-
             $configs = self::getConfigs();
 
             $today = new \DateTime('now');
@@ -32,15 +30,15 @@ class TicketAPIFetcherService
             $nextWeek->add(new \DateInterval('P7D'));
 
             $content = [
-                'language' => 'ENG',
-                'Currency' => 'USD',
+                'language'    => 'ENG',
+                'Currency'    => 'USD',
                 'destination' => 'MCO',
-                'DateFrom' => $today->format('m/d/Y'),
-                'DateTO' => $nextWeek->format('m/d/Y'),
+                'DateFrom'    => $today->format('m/d/Y'),
+                'DateTO'      => $nextWeek->format('m/d/Y'),
                 'Occupancy' => [
                     'AdultCount' => '1',
                     'ChildCount' => '1',
-                    'ChildAges' => ['10']
+                    'ChildAges'  => ['10']
                 ],
             ];
 
@@ -62,8 +60,10 @@ class TicketAPIFetcherService
         }
     }
 
+
     /**
-     * @return bool|string
+     * @return mixed
+     * @throws \Exception
      */
     static private function requestAuthorizationToken()
     {
@@ -80,10 +80,16 @@ class TicketAPIFetcherService
         $response = self::request(
             $endpoint,
             $content,
-            "Content-type: application/x-www-form-urlencoded\r\n"
+            "Content-type: application/x-www-form-urlencoded"
         );
 
-        return json_decode($response , true)['access_token'];
+        $response = json_decode($response , true);
+
+        if (!$response['access_token']) {
+            throw new \Exception('Invalid access token.', 400);
+        }
+
+        return $response['access_token'];
     }
 
     /**
