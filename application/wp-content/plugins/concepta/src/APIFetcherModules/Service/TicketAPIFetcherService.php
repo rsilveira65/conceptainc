@@ -67,6 +67,13 @@ class TicketAPIFetcherService
      */
     static private function requestAuthorizationToken()
     {
+
+        $tokenValidatorService = new TokenValidatorService();
+
+        if ($tokenValidatorService->isTokenValid()) {
+            return $tokenValidatorService->getToken();
+        }
+
         $configs = self::getConfigs();
 
         $content = sprintf(
@@ -88,6 +95,8 @@ class TicketAPIFetcherService
         if (!$response['access_token']) {
             throw new \Exception('Invalid access token.', 400);
         }
+
+        $tokenValidatorService->setToken($response);
 
         return $response['access_token'];
     }
