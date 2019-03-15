@@ -10,7 +10,12 @@ namespace Concepta\ShortcodeModules\Shortcode;
 
 use Concepta\Core\AbstractClass\AbstractShortcode;
 
-
+/**
+ * Class TicketShortcode
+ *
+ * @package Concepta\ShortcodeModules\Shortcode
+ * @author Rafael Silveira <me@rsilveira.dev>
+ */
 class TicketShortcode extends AbstractShortcode
 {
     protected $name = 'concepta_ticket_shortcode';

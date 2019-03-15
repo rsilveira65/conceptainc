@@ -21,7 +21,7 @@ class TokenValidatorService
      */
     public function setToken($token)
     {
-        update_option( 'concepta_token', $token);
+        update_option('concepta_token', $token);
     }
 
     /**

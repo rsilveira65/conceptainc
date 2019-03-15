@@ -67,7 +67,6 @@ class TicketAPIFetcherService
      */
     static private function requestAuthorizationToken()
     {
-
         $tokenValidatorService = new TokenValidatorService();
 
         if ($tokenValidatorService->isTokenValid()) {
@@ -90,7 +89,7 @@ class TicketAPIFetcherService
             "Content-type: application/x-www-form-urlencoded"
         );
 
-        $response = json_decode($response , true);
+        $response = json_decode($response, true);
 
         if (!$response['access_token']) {
             throw new \Exception('Invalid access token.', 400);
