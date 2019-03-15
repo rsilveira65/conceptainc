@@ -105,7 +105,7 @@ $ mysql -uconceptainc -pconceptainc conceptainc < dumps/conceptainc.sql
 http://localhost
 
 
-# 2. React build and copy files
+## 2. React build and copy files
 
 ```bash
 $ make copy-bundle
