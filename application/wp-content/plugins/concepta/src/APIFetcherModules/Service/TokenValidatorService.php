@@ -25,7 +25,7 @@ class TokenValidatorService
     }
 
     /**
-     * @return mixed|void
+     * @return mixed
      */
     public function getToken()
     {

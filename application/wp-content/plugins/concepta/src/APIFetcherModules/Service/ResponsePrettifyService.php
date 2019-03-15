@@ -18,7 +18,7 @@ class ResponsePrettifyService
 {
     /**
      * @param \Exception $ex
-     * @return mixed|string|void
+     * @return mixed|string
      */
     public function formatErrorResponse(\Exception $ex)
     {
@@ -35,7 +35,7 @@ class ResponsePrettifyService
 
     /**
      * @param $response
-     * @return mixed|string|void
+     * @return mixed|string
      */
     public function formatResponse($response)
     {
@@ -43,6 +43,10 @@ class ResponsePrettifyService
     }
 
 
+    /**
+     * @param $response
+     * @return array
+     */
     private function filterResponseResults($response)
     {
         $responseArray = json_decode($response, true);
