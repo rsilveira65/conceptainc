@@ -58,8 +58,8 @@ class ResponsePrettifyService
             $prettyResponse[] = [
                 'code'        => $responseItem['TicketInfo']['Code'],
                 'destination' => $responseItem['TicketInfo']['Destination']['Code'],
-                'name' => $responseItem['TicketInfo']['Destination']['Code'],
-                'photos' => $this->filterTicketPhotos($responseItem['TicketInfo']['ImageList'])
+                'name'        => $responseItem['TicketInfo']['Destination']['Code'],
+                'photos'      => $this->filterTicketPhotos($responseItem['TicketInfo']['ImageList'])
             ];
         }
 
