@@ -1,4 +1,7 @@
-# conceptainc |🚧Work in progress!🚧
+# conceptainc
+
+![](https://i.imgur.com/VxQQJJt.png)
+
 
 ## PHP and React Developer Test
 You will need to create a WordPress plugin. Using a shortcode, this plugin will render a React app, also created by you (you can use
@@ -94,13 +97,19 @@ $ docker-compose up -d
 ### 1.4 Setup database
 ```bash
 $ docker exec -it conceptainc-database bash
-$ mysql -uconceptainc -pconceptainc conceptainc < dumps/conceptainc_dump.sql
+$ mysql -uconceptainc -pconceptainc conceptainc < dumps/conceptainc.sql
 
 ```
 
 ### 1.5 Open your browser on
 http://localhost
 
+
+# 2. React build and copy files
+
+```bash
+$ make copy-bundle
+```
 
 [Download the POSTMAN Collection](https://www.getpostman.com/collections/b3dfa014d86371640238)
 
