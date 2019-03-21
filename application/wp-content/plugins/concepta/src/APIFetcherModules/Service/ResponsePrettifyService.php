@@ -76,7 +76,7 @@ class ResponsePrettifyService
         $filteredPhotos = [];
         foreach ($photos as $photo) {
 
-            if (!(strtolower($photo['Type']) === "s")) continue;
+            if (!(strtolower($photo['Type']) === $type)) continue;
 
             $filteredPhotos[] = $photo;
         }
